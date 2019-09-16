@@ -8,14 +8,13 @@ table = smd.xmlSMD2ListofDictionaries(r'data\smd.xml')
 
 workbook = xlsxwriter.Workbook(r'data\SMD.xlsx')
 worksheet = workbook.add_worksheet()
-#for row in table:
 
 xlrow = 0
 xlcolumn = 0
 
 for field in table[0]:
-    #print(field)
-    worksheet.write(xlrow, xlcolumn, field)
+
+    worksheet.write(xlrow, xlcolumn, field.strip())
     xlcolumn += 1
 
 for row in table:
@@ -27,7 +26,7 @@ for row in table:
 
         if not row[field] is None:
 
-            worksheet.write(xlrow, xlcolumn, row[field])
+            worksheet.write(xlrow, xlcolumn, row[field].strip())
 
         else:
 
