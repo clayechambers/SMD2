@@ -1,9 +1,9 @@
 import ReadSMD_eTree as smd
 import time
 
-table = smd.xmlSMD2ListofDictionaries(r'data\smd.xml')
-
 start_time = time.time()
+
+table = smd.xmlSMD2ListofDictionaries(r'data\smd.xml')
 
 with open(r'data\data.txt','w') as file:
 
